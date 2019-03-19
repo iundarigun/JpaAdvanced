@@ -32,10 +32,13 @@ public class TeamController {
     public HttpEntity<?> create(@RequestBody TeamVO teamVO){
         Team team = new Team();
         team.setName(teamVO.getName());
+
         List<User> userList = teamVO.getUserList()
                 .stream()
                 .map(u-> userRepository.getOne(u))
                 .collect(Collectors.toList());
+
+
         List<TeamUser> teamUserList = userList.stream()
                 .map(u -> new TeamUser(team, u))
                 .collect(Collectors.toList());
