@@ -21,6 +21,7 @@ repositories {
 
 ext {
 	set('swaggerVersion', '2.9.2')
+	set('javaFakerVersion', '0.17.2')
 }
 
 dependencies {
@@ -29,6 +30,8 @@ dependencies {
 
 	implementation "io.springfox:springfox-swagger2:${swaggerVersion}"
 	implementation "io.springfox:springfox-swagger-ui:${swaggerVersion}"
+
+	implementation "com.github.javafaker:javafaker:${javaFakerVersion}"
 
 	runtimeOnly 'mysql:mysql-connector-java'
 	compileOnly 'org.projectlombok:lombok'
