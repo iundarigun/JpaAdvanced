@@ -1,20 +1,12 @@
-# MySQL
+# JPA Advanced
 
-Create a new docker instance of mysql with name local-mysql, listen in 3306 port (once)
+This repo is used for test some little advanced JPA features
 
-```
-$ docker run -p 3306:3306 -e MYSQL_ROOT_PASSWORD=root --name local-mysql -d mysql
-```
+## Embeddable
 
-Connect and create the database
+In this [project](embeddable-jpa) (java), I test some embedded features, and Interface DTO object for return
 
-```
-$ docker exec -it local-mysql mysql -uroot -proot
-> create database jpaadvanced;
-```
+## Soft delete
 
-Start container next time:
-```
-$ docker start local-mysql
-```
+In this [project](softdelete-jpa) (Kotlin), I test some features about soft delete
 
