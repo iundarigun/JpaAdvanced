@@ -1,6 +1,6 @@
 # JPA Advanced
 
-This repo is used for test some little advanced JPA features
+This repo is used for test some little advanced JPA features -
 
 ## Embeddable
 
