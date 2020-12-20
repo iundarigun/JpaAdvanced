@@ -1,6 +1,7 @@
 package br.com.devcave.jpa.service
 
 import br.com.devcave.jpa.domain.Employee
+import br.com.devcave.jpa.domain.EmployeeInvoiceResponse
 import br.com.devcave.jpa.domain.EmployeeRequest
 import br.com.devcave.jpa.repository.EmployeeRepository
 import org.springframework.stereotype.Service
@@ -37,15 +38,15 @@ class EmployeeService(
         return employeeRepository.getEmployeesWithInvoicesGreaterThan250()
     }
 
+    @Transactional
+    fun countInvoices(): List<EmployeeInvoiceResponse> {
+        return employeeRepository.countInvoices()
+    }
+
     private fun EmployeeRequest.toEntity(): Employee =
         Employee(
             name = this.name,
             document = this.document,
             bornAt = this.bornAt
         )
-
-    fun countInvoices(): List<Pair<*, *>> {
-        return employeeRepository.countInvoices()
-
-    }
 }

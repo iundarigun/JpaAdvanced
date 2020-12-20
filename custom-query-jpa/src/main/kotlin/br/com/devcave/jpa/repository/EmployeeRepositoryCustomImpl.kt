@@ -1,10 +1,9 @@
 package br.com.devcave.jpa.repository
 
 import br.com.devcave.jpa.domain.Employee
+import br.com.devcave.jpa.domain.EmployeeInvoiceResponse
 import br.com.devcave.jpa.domain.Invoice
 import javax.persistence.EntityManager
-import javax.persistence.Tuple
-import javax.persistence.criteria.CriteriaBuilder
 
 
 class EmployeeRepositoryCustomImpl(
@@ -26,10 +25,10 @@ class EmployeeRepositoryCustomImpl(
         }.resultList
     }
 
-    override fun countInvoices(): List<Pair<*, *>> {
+    override fun countInvoices(): List<EmployeeInvoiceResponse> {
         val criteriaBuilder = entityManager.criteriaBuilder
         val cq = criteriaBuilder
-            .createQuery(Pair::class.java).also {
+            .createQuery(EmployeeInvoiceResponse::class.java).also {
                 val from = it.from(Employee::class.java)
                 val join = from.join<Employee, Invoice>("invoices")
                 it.multiselect(from.get<String>("name"), criteriaBuilder.count(join.get<Long>("id")))

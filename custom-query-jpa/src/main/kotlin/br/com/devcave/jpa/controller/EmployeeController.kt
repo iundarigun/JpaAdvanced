@@ -1,6 +1,7 @@
 package br.com.devcave.jpa.controller
 
 import br.com.devcave.jpa.domain.Employee
+import br.com.devcave.jpa.domain.EmployeeInvoiceResponse
 import br.com.devcave.jpa.domain.EmployeeRequest
 import br.com.devcave.jpa.service.EmployeeService
 import org.springframework.http.HttpEntity
@@ -47,7 +48,7 @@ class EmployeeController(
     }
 
     @GetMapping("count")
-    fun countInvoices(): HttpEntity<List<Pair<*, *>>> {
+    fun countInvoices(): HttpEntity<List<EmployeeInvoiceResponse>> {
         return ResponseEntity
             .ok(employeeService.countInvoices())
     }
