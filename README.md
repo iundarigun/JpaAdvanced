@@ -14,4 +14,13 @@ In this [project](softdelete-jpa) (Kotlin), I test some features about soft dele
 
 In this [project](custom-query-jpa) (Kotlin), I explore some use case to do custom query, using JPA Criteria API.
 
+## Generic especification JPA
+
+In this [project](generic-specification-jpa) (kotlin), I explore Specification to do a generic search
+
+## Attribute Converter
+In this [project](attribute-converter) (kotlin), I explore how to converter to/into database type into/to java/kotlin object.
+
+## Element collection
+In this [project](element-collection) (kotlin), I explore how to use `@ElementCollection` annotation to easy one to many relations.
 
