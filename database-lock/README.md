@@ -1,6 +1,8 @@
 # Database lock
 
 This repo is a sample to show two possible uses for lock database using `Postgres`
+- Update: Updating has a pessimitic lock with timeout. If after certain time the lock can not acquire, we throw an exception. At least, we have a little time waiting the lock been released.
+- Job: When we execute a job that is necessary to guarantee the execution only in one instance, we can use this approach too, in this case without waiting
 
 ## Docker postgres
 
