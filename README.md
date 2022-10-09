@@ -24,3 +24,5 @@ In this [project](attribute-converter) (kotlin), I explore how to converter to/i
 ## Element collection
 In this [project](element-collection) (kotlin), I explore how to use `@ElementCollection` annotation to easy one to many relations.
 
+## Database lock
+in this [project](database-lock)(kotlin), I explore the pessimisic lock and job lock using Postgres features.
